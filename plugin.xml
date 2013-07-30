@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="org.scriptotek.appinfo"
+    version="1.0.0">
+
+  <name>AppInfo Plugin</name>
+  <description>
+    Makes the app version number (android:versionName on Android, CFBundleVersion on iOS) 
+    accessible through a new method navigator.appinfo.getVersion().
+  </description>
+  <license>MIT</license>
+
+  <engines>
+    <engine name="cordova" version=">=2.0.0" />
+  </engines>
+
+  <js-module src="www/appinfo.js" name="AppInfo">
+      <merges target="navigator.appInfo" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+  
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="AppInfo">
+          <param name="android-package" value="org.scriptotek.appinfo.AppInfo"/>
+        </feature>
+      </config-file>
+
+      <source-file src="src/android/AppInfo.java" target-dir="src/org/scriptotek/appinfo" />
+
+  </platform>
+
+  <!-- iOS -->
+  <platform name="ios">
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="AppInfo">
+        <param name="ios-package" value="AppInfo"/>
+      </feature>
+    </config-file>
+    
+    <header-file src="src/ios/AppInfo.h" />
+    <source-file src="src/ios/AppInfo.m" />
+
+  </platform>
+
+</plugin>
