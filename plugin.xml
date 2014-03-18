@@ -56,5 +56,5 @@
 
     <source-file src="src/wp8/AppInfo.cs" />
 
-  </plugin>
+  </platform>
 </plugin>
