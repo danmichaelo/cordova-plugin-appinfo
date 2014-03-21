@@ -1,7 +1,8 @@
 cordova-plugin-appinfo
 ---------------------------
-Makes the app version number (android:versionName on Android, CFBundleVersion on iOS) 
-accessible through a new method `navigator.appInfo.getVersion()`.
+
+Provides a single function `navigator.appInfo.getVersion()` to get the app version number
+across platforms, using `android:versionName` on Android, `CFBundleVersion` on iOS and the `WMAppManifest.xml` on Windows Phone 8. Thanks to [@thomas-mullaly](//github.com/thomas-mullaly)) for the WP8 implementation.
 
 Can be installed using the [Cordova CLI](http://cordova.apache.org/docs/en/edge/guide_cli_index.md.html):
 
@@ -16,6 +17,7 @@ Supported Platforms
 
 - Android
 - iPhone
+- Windows Phone 8
 
 Quick Example
 -------------
