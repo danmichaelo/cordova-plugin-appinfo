@@ -46,6 +46,7 @@
 
   </platform>
 
+  <!-- Windows Phone 8 -->
   <platform name="wp8"> 
 
     <config-file target="config.xml" parent="/*">
