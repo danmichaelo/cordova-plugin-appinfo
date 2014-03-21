@@ -1,5 +1,4 @@
-cordova-plugin-appinfo
----------------------------
+# cordova-plugin-appinfo
 
 Provides a single function `navigator.appInfo.getVersion()` to get the app version number
 across platforms, using `android:versionName` on Android, `CFBundleVersion` on iOS and the `WMAppManifest.xml` on Windows Phone 8. Thanks to [@thomas-mullaly](//github.com/thomas-mullaly)) for the WP8 implementation.
@@ -12,15 +11,13 @@ If you are not using the Cordova Command-line Interface, you might try [Using Pl
 
 The plugin has only been tested with Cordova 3.0.0, and might require modifications to work with older versions of Cordova.
 
-Supported Platforms
--------------------
+### Supported Platforms
 
 - Android
 - iPhone
 - Windows Phone 8
 
-Quick Example
--------------
+### Example
 
     navigator.appInfo.getVersion(function(args) {
         alert('Me is at v. ' + args);
