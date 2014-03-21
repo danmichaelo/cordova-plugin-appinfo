@@ -16,19 +16,19 @@
   </engines>
 
   <js-module src="www/appinfo.js" name="AppInfo">
-      <merges target="navigator.appInfo" />
+    <merges target="navigator.appInfo" />
   </js-module>
 
   <!-- android -->
   <platform name="android">
   
-      <config-file target="res/xml/config.xml" parent="/*">
-        <feature name="AppInfo">
-          <param name="android-package" value="org.scriptotek.appinfo.AppInfo"/>
-        </feature>
-      </config-file>
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="AppInfo">
+        <param name="android-package" value="org.scriptotek.appinfo.AppInfo"/>
+      </feature>
+    </config-file>
 
-      <source-file src="src/android/AppInfo.java" target-dir="src/org/scriptotek/appinfo" />
+    <source-file src="src/android/AppInfo.java" target-dir="src/org/scriptotek/appinfo" />
 
   </platform>
 
@@ -50,9 +50,9 @@
   <platform name="wp8"> 
 
     <config-file target="config.xml" parent="/*">
-        <feature name="AppInfo">
-            <param name="wp-package" value="AppInfo"/>
-        </feature>
+      <feature name="AppInfo">
+        <param name="wp-package" value="AppInfo"/>
+      </feature>
     </config-file>
 
     <source-file src="src/wp8/AppInfo.cs" />
