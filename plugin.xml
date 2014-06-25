@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="org.scriptotek.appinfo"
+    id="com.yezhiming.cordova.appinfo"
     version="1.1.0">
 
   <name>AppInfo Plugin</name>
@@ -24,11 +24,11 @@
   
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="AppInfo">
-        <param name="android-package" value="org.scriptotek.appinfo.AppInfo"/>
+        <param name="android-package" value="com.yezhiming.cordova.AppInfo"/>
       </feature>
     </config-file>
 
-    <source-file src="src/android/AppInfo.java" target-dir="src/org/scriptotek/appinfo" />
+    <source-file src="src/android/AppInfo.java" target-dir="src/com/yezhiming/cordova/appinfo" />
 
   </platform>
 
