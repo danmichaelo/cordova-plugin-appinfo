@@ -12,6 +12,11 @@ module.exports = {
         exec(callback, function(err) {
         	callback('Unknown');
     	}, 'AppInfo', 'getVersion', []);
-    }
+    },
 
+    getIdentifier: function(callback){
+        exec(callback, function(err){
+            callback('Unknown');
+        }, 'AppInfo', 'getIdentifier', []);
+    }
 };
