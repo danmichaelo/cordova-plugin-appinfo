@@ -1,4 +1,4 @@
-package org.scriptotek.appinfo;
+package com.yezhiming.cordova.appinfo;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
