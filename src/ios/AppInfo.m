@@ -11,4 +11,12 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)getIdentifier:(CDVInvokedUrlCommand*)command
+{
+    NSString* identifier = NSBundle.mainBundle.infoDictionary[@"CFBundleIdentifier"];
+    CDVPluginResult* pluginResult = nil;
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:identifier];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 @end

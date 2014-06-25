@@ -21,6 +21,9 @@ public class AppInfo extends CordovaPlugin {
         if (action.equals("getVersion")) {
             this.getVersion(callbackContext);
             return true;
+        } else if (action.equals("getIdentifier")) {
+            this.getIdentifier(callbackContext);
+            return true;
         }
         return false;
     }
@@ -40,4 +43,9 @@ public class AppInfo extends CordovaPlugin {
 
     }
 
+    private void getIdentifier(CallbackContext callbackContext) {
+
+        String packageName = this.cordova.getActivity().getPackageName();
+        callbackContext.success(packageName);
+    }
 }
