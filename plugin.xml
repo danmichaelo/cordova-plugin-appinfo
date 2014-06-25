@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.yezhiming.cordova.appinfo"
-    version="1.2.2">
+    version="1.2.3">
 
   <name>AppInfo Plugin</name>
   <description>
@@ -24,7 +24,7 @@
   
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="AppInfo">
-        <param name="android-package" value="com.yezhiming.cordova.AppInfo"/>
+        <param name="android-package" value="com.yezhiming.cordova.appinfo.AppInfo"/>
       </feature>
     </config-file>
 
