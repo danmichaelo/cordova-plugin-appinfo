@@ -3,6 +3,12 @@ var exec = require('cordova/exec');
 
 module.exports = {
 
+    getAppInfo: function(callback){
+        exec(callback, function(err){
+            callback(err);
+        }, 'AppInfo', 'getAppInfo', []);
+    },
+
     /**
      * Returns the version name (or "unknown" if it fails)
      *
