@@ -2,12 +2,13 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="org.scriptotek.appinfo"
-    version="2.0.0">
+    version="2.0.1">
 
   <name>AppInfo Plugin</name>
   <description>
-    Makes the app version number (android:versionName on Android, CFBundleVersion on iOS, and WMAppManifest.xml App Version on WP8) 
-    accessible through a new method navigator.appinfo.getVersion().
+    Provide the ability to assess to Application informations.
+    accessible through navigator.appinfo.getAppInfo().
+    currently 'identifier', 'version', 'build' is provided as one JSON result by callback.
   </description>
   <license>MIT</license>
 
