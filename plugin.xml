@@ -6,7 +6,7 @@
 
   <name>AppInfo Plugin</name>
   <description>
-    Makes the app version number (android:versionName on Android, CFBundleVersion on iOS, and WMAppManifest.xml App Version on WP8) 
+    Makes the app version number (android:versionName on Android, CFBundleVersion on iOS, and WMAppManifest.xml App Version on WP8)
     accessible through a new method navigator.appinfo.getVersion().
   </description>
   <license>MIT</license>
@@ -21,7 +21,7 @@
 
   <!-- android -->
   <platform name="android">
-  
+
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="AppInfo">
         <param name="android-package" value="org.scriptotek.appinfo.AppInfo"/>
@@ -40,14 +40,14 @@
         <param name="ios-package" value="AppInfo"/>
       </feature>
     </config-file>
-    
+
     <header-file src="src/ios/AppInfo.h" />
     <source-file src="src/ios/AppInfo.m" />
 
   </platform>
 
   <!-- Windows Phone 8 -->
-  <platform name="wp8"> 
+  <platform name="wp8">
 
     <config-file target="config.xml" parent="/*">
       <feature name="AppInfo">
