@@ -5,15 +5,15 @@
 - (void)getAppInfo:(CDVInvokedUrlCommand*)command
 {
     NSDictionary *appInfoDict = NSBundle.mainBundle.infoDictionary;
-    
+
     NSString *identifier = appInfoDict[@"CFBundleIdentifier"];
     NSString *version = appInfoDict[@"CFBundleShortVersionString"];
     NSString *build = appInfoDict[@"CFBundleVersion"];
-    
+
     NSDictionary *appInfo = @{@"identifier": identifier,
                               @"version": version,
                               @"build": build};
-    
+
     CDVPluginResult* pluginResult = nil;
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:appInfo];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
@@ -30,7 +30,7 @@
 - (void)getBuild:(CDVInvokedUrlCommand*)command
 {
     NSString* build = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-    
+
     CDVPluginResult* pluginResult = nil;
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:build];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];

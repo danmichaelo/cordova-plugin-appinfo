@@ -32,11 +32,11 @@ public class AppInfo extends CordovaPlugin {
     }
 
     private void getAppInfo(CallbackContext callbackContext){
-        
+
         String packageName = this.cordova.getActivity().getPackageName();
         String versionName = "unknown";
         int versionCode = -1;
-        
+
         PackageManager pm = this.cordova.getActivity().getPackageManager();
         try {
             PackageInfo packageInfo = pm.getPackageInfo(packageName, 0);
@@ -44,7 +44,7 @@ public class AppInfo extends CordovaPlugin {
             versionCode = packageInfo.versionCode;
         } catch (NameNotFoundException e) {
         }
-        
+
         JSONObject appInfo = new JSONObject();
         try {
             appInfo.put("identifier", packageName);
@@ -53,7 +53,7 @@ public class AppInfo extends CordovaPlugin {
         } catch (JSONException e) {
             callbackContext.error(e.getMessage());
         }
-        
+
         callbackContext.success(appInfo);
     }
 
