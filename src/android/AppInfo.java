@@ -18,11 +18,43 @@ public class AppInfo extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("getVersion")) {
+        if (action.equals("getAppInfo")) {
+                this.getAppInfo(callbackContext);
+                return true;
+        } else if (action.equals("getVersion")) {
             this.getVersion(callbackContext);
+            return true;
+        } else if (action.equals("getIdentifier")) {
+            this.getIdentifier(callbackContext);
             return true;
         }
         return false;
+    }
+
+    private void getAppInfo(CallbackContext callbackContext){
+        
+        String packageName = this.cordova.getActivity().getPackageName();
+        String versionName = "unknown";
+        int versionCode = -1;
+        
+        PackageManager pm = this.cordova.getActivity().getPackageManager();
+        try {
+            PackageInfo packageInfo = pm.getPackageInfo(packageName, 0);
+            versionName = packageInfo.versionName;
+            versionCode = packageInfo.versionCode;
+        } catch (NameNotFoundException e) {
+        }
+        
+        JSONObject appInfo = new JSONObject();
+        try {
+            appInfo.put("identifier", packageName);
+            appInfo.put("version", versionName);
+            appInfo.put("build", versionCode);
+        } catch (JSONException e) {
+            callbackContext.error(e.getMessage());
+        }
+        
+        callbackContext.success(appInfo);
     }
 
     private void getVersion(CallbackContext callbackContext) {
@@ -40,4 +72,9 @@ public class AppInfo extends CordovaPlugin {
 
     }
 
+    private void getIdentifier(CallbackContext callbackContext) {
+
+        String packageName = this.cordova.getActivity().getPackageName();
+        callbackContext.success(packageName);
+    }
 }
