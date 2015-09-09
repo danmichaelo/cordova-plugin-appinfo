@@ -38,7 +38,7 @@ namespace Cordova.Extension.Commands
 
         public void getVersion(string options)
         {
-            string version = "unknown";
+            string version = "";
             XElement manifestAppElement = XDocument.Load("WMAppManifest.xml").Root.Element("App");
 
             if (manifestAppElement != null && manifestAppElement.Attribute("Version") != null)
@@ -51,7 +51,7 @@ namespace Cordova.Extension.Commands
 
         public void getIdentifier(string options)
         {
-            string productID = "unknown";
+            string productID = "";
             XElement manifestAppElement = XDocument.Load("WMAppManifest.xml").Root.Element("App");
 
             if (manifestAppElement != null && manifestAppElement.Attribute("ProductID") != null)
