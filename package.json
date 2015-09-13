@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-appinfo",
-  "version": "1.1.0",
-  "description": "Cordova plugin to access the app version number",
+  "version": "2.0.2",
+  "description": "Cordova plugin to access app info (version number, identifier, build)",
   "cordova": {
     "id": "cordova-plugin-appinfo",
     "platforms": [
@@ -24,7 +24,20 @@
     "cordova-ios",
     "cordova-wp8"
   ],
-  "author": "Dan Michael O. Heggø",
+  "author": {
+    "name": "Dan Michael O. Heggø",
+    "url": "https://github.com/danmichaelo"
+  },
+  "contributors": [
+    {
+      "name": "Justin Yip",
+      "url": "https://github.com/yezhiming"
+    },
+    {
+      "name": "Thomas Mullaly",
+      "url": "https://github.com/thomas-mullaly"
+    }
+  ],
   "license": "MIT",
   "homepage": "https://github.com/danmichaelo/cordova-plugin-appinfo#readme"
 }
