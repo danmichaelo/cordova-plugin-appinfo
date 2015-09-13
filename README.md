@@ -1,5 +1,7 @@
 # cordova-plugin-appinfo
 
+[![npm version](https://badge.fury.io/js/cordova-plugin-appinfo.svg)](http://badge.fury.io/js/cordova-plugin-appinfo)
+
 Cordova plugin that provides access to the following app info:
 
 * `identifier`: Bundle Identifier on iOS, PackageName on Android. Example: `'org.scriptotek.testapp'`.
