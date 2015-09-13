@@ -32,13 +32,13 @@ public class AppInfo extends CordovaPlugin {
 
         String packageName = this.cordova.getActivity().getPackageName();
         String versionName = "";
-        int versionCode = -1;
+        String versionCode = "";
 
         PackageManager pm = this.cordova.getActivity().getPackageManager();
         try {
             PackageInfo packageInfo = pm.getPackageInfo(packageName, 0);
             versionName = packageInfo.versionName;
-            versionCode = packageInfo.versionCode;
+            versionCode = Integer.toString(packageInfo.versionCode);
         } catch (NameNotFoundException e) {
         }
 
