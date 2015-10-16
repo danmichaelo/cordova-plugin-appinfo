@@ -18,6 +18,7 @@ The plugin is [on npm](https://www.npmjs.com/package/cordova-plugin-appinfo), yo
 
 - Android
 - iPhone
+- Windows
 - WP8 (except build number)
 
 ### Example
