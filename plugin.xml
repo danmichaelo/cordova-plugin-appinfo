@@ -45,7 +45,7 @@
 
   </platform>
 
-  <!-- Windows Phone 8 
+  <!-- Windows Phone 8 -->
   <platform name="wp8">
 
     <config-file target="config.xml" parent="/*">
@@ -57,7 +57,6 @@
     <source-file src="src/wp8/AppInfo.cs" />
 
   </platform>
--->
 
   <!-- Windows -->
   <platform name="windows">
@@ -68,9 +67,7 @@
       </feature>
     </config-file>
 
-    <js-module src="src/windows/AppInfo.js" name="AppInfo">
-      <merges target="" />
-    </js-module>
+    <source-file src="src/windows/AppInfo.js" />
 
   </platform>
 
