@@ -58,16 +58,16 @@
 
   </platform>
 
-  <!-- Windows -->
+  <!-- Windows universal apps (Windows 8.1, Windows Phone 8.1, Windows 8.0) -->
   <platform name="windows">
     
-    <config-file target="config.xml" parent="/*">
-      <feature name="AppInfo">
-        <param name="windows-package" value="AppInfo"/>
-      </feature>
-    </config-file>
+    <js-module src="src/windows/AppInfoProxy.js" name="AppInfoProxy">
+      <runs />
+    </js-module>
 
-    <source-file src="src/windows/AppInfo.js" />
+    <js-module src="www/appinfo.js" name="appinfo">
+      <clobbers target="navigator.appInfo" />
+    </js-module>
 
   </platform>
 
