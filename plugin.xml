@@ -67,7 +67,9 @@
       </feature>
     </config-file>
 
-    <source-file src="src/windows/AppInfo.js" />
+    <js-module src="src/windows/AppInfo.js" name="AppInfo">
+      <merges target="" />
+    </js-module>
 
   </platform>
 
