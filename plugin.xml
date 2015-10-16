@@ -65,10 +65,6 @@
       <runs />
     </js-module>
 
-    <js-module src="www/appinfo.js" name="appinfo">
-      <clobbers target="navigator.appInfo" />
-    </js-module>
-
   </platform>
 
 </plugin>
