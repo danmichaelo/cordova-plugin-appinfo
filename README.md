@@ -10,7 +10,7 @@ Cordova plugin that provides access to the following app info:
 	* iOS: field is `build`. Example: `'1.0.2.1'`.
 	* Android: field is `versionCode`. Example: `'18'`.
 	* Windows Phone 8: empty string (not supported).
-	* Windows universal apps: version + revision. Example: `'1.0.2.1'. (Windows 8.1, Windows Phone 8.1, Windows 8.0)
+	* Windows universal apps: `version` + `revision`. Example: `'1.0.2.1'. (Windows 8.1, Windows Phone 8.1, Windows 8.0)
 
 ### Installation
 
