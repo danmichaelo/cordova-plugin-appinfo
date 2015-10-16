@@ -57,4 +57,18 @@
     <source-file src="src/wp8/AppInfo.cs" />
 
   </platform>
+
+  <!-- Windows -->
+  <platform name="windows">
+    
+    <config-file target="config.xml" parent="/*">
+      <feature name="AppInfo">
+        <param name="windows-package" value="AppInfo"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/windows/AppInfo.js" />
+
+  </platform>
+
 </plugin>
