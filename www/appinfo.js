@@ -1,7 +1,7 @@
 
 var exec = require('cordova/exec');
 
-module.exports = {
+var appinfo = {
 
     /**
      * Get an object with the keys 'version', 'build' and 'identifier'.
@@ -33,3 +33,37 @@ module.exports = {
         exec(success, fail, 'AppInfo', 'getIdentifier', []);
     }
 };
+
+module.exports = appinfo;
+
+
+/**
+ * If Angular is available, register `AppInfo` as an Angular module.
+ */
+if (typeof angular !== 'undefined') {
+    angular.module('AppInfo', []).factory('AppInfo', ['$q', function($q) {
+
+        function makePromise(fn) {
+            var deferred = $q.defer();
+            fn(function success(response) {
+                deferred.resolve(response);
+            }, function fail(response) {
+                deferred.reject(response);
+            });
+            return deferred.promise;
+        }
+
+        var factory = {
+            getAppInfo: function() {
+                return makePromise(appinfo.getAppInfo);
+            },
+            getVersion: function() {
+                return makePromise(appinfo.getVersion);
+            },
+            getIdentifier: function() {
+                return makePromise(appinfo.getIdentifier);
+            }
+        };
+        return factory;
+    }]);
+}

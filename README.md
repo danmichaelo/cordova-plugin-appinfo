@@ -32,6 +32,31 @@ navigator.appInfo.getAppInfo(function(appInfo) {
 });
 ```
 
+### Example using Angular
+
+If you're using Angular, you can use the included `AppInfo` module:
+
+```
+var app = angular.module('myApp', ['AppInfo']);
+```
+
+You can then inject the `AppInfo` service:
+
+```javascript
+function MyController(AppInfo) {
+
+  AppInfo.getAppInfo().then(function(appInfo) {
+    console.log('identifier: %s', appInfo.identifier);
+    console.log('version: %s', appInfo.version);
+    console.log('build: %s', appInfo.build);
+  }, function(err) {
+    alert(err);
+  });
+
+}
+```
+
+
 ### Contributing
 
 Pull requests are welcome.
