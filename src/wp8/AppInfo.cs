@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Xml.Linq;
 
 using WPCordovaClassLib.Cordova;
@@ -31,9 +32,8 @@ namespace Cordova.Extension.Commands
                 appInfo["version"] = manifestAppElement.Attribute("Version").Value;
             }
 
-            string jsonString = JsonHelper.Serialize(keys);
 
-            DispatchCommandResult(new PluginResult(PluginResult.Status.OK, jsonString));
+            DispatchCommandResult(new PluginResult(PluginResult.Status.OK, "{\"identifier\": \"" + appInfo["identifier"] + "\", \"version\":\"" + appInfo["version"] + "\"}"));
         }
 
         public void getVersion(string options)
