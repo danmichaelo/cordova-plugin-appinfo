@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-appinfo",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Cordova plugin to access app info (version number, identifier, build)",
   "cordova": {
     "id": "cordova-plugin-appinfo",
