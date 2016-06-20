@@ -6,7 +6,11 @@ Cordova plugin that provides access to the following app info:
 
 * `identifier`: Bundle Identifier on iOS, PackageName on Android. Example: `'org.scriptotek.testapp'`.
 * `version`: CFBundleVersion on iOS, versionName on Android, Version from WMAppManifest.xml on WP8. Example: `'1.0.2'`.
-* `build`: Build on iOS (Example: `'1.0.2.1'`), versionCode on Android (Example: `'18'`), empty string on WP8 (not supported).
+* `build`: 
+	* iOS: field is `build`. Example: `'1.0.2.1'`.
+	* Android: field is `versionCode`. Example: `'18'`.
+	* Windows Phone 8: empty string (not supported).
+	* Windows universal apps: `version` + `revision`. Example: `'1.0.2.1'`. (Windows 8.1, Windows Phone 8.1, Windows 8.0)
 
 ### Installation
 
@@ -18,6 +22,7 @@ The plugin is [on npm](https://www.npmjs.com/package/cordova-plugin-appinfo), yo
 
 - Android
 - iPhone
+- Windows
 - WP8 (except build number)
 
 ### Example
