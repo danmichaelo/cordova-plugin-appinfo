@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-appinfo",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Cordova plugin to access app info (version number, identifier, build)",
   "cordova": {
     "id": "cordova-plugin-appinfo",
@@ -37,6 +37,10 @@
     {
       "name": "Thomas Mullaly",
       "url": "https://github.com/thomas-mullaly"
+    },
+    {
+      "name": "Michele Belluco",
+      "url": "https://github.com/vash15"
     }
   ],
   "license": "MIT",
