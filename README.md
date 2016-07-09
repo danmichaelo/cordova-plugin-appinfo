@@ -25,7 +25,7 @@ The plugin is [on npm](https://www.npmjs.com/package/cordova-plugin-appinfo), yo
 - Windows
 - WP8 (except build number)
 
-### Example
+### Asynchronous example
 
 ```js
 navigator.appInfo.getAppInfo(function(appInfo) {
@@ -37,10 +37,18 @@ navigator.appInfo.getAppInfo(function(appInfo) {
 });
 ```
 
+### Synchronous example
+```js
+console.log('identifier: %s', navigator.appInfo.identifier);
+console.log('version: %s', navigator.appInfo.version);
+console.log('build: %s', navigator.appInfo.build);
+```
+
 ### Contributing
 
 Pull requests are welcome.
 
 * @thomas-mullaly added the WP8 implementation
 * @yezhiming added functionality to get identifier and build.
+* @jcesarmobile added synchronous implementation
 

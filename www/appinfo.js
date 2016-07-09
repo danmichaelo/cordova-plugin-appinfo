@@ -1,35 +1,58 @@
 
 var exec = require('cordova/exec');
+var channel = require('cordova/channel');
 
-module.exports = {
+channel.createSticky('onAppInfoReady');
+channel.waitForInitialization('onAppInfoReady');
 
-    /**
-     * Get an object with the keys 'version', 'build' and 'identifier'.
-     *
-     * @param {Function} success    Callback method called on success.
-     * @param {Function} fail       Callback method called on failure.
-     */
-    getAppInfo: function(success, fail){
-        exec(success, fail, 'AppInfo', 'getAppInfo', []);
-    },
+function appInfo() {
 
-    /**
-     * Get the version name.
-     *
-     * @param {Function} success    Callback method called on success.
-     * @param {Function} fail       Callback method called on failure.
-     */
-    getVersion: function(success, fail) {
-        exec(success, fail, 'AppInfo', 'getVersion', []);
-    },
+    this.version = null;
+    this.identfier = null;
+    this.build = null;
 
-    /**
-     * Get the app identifier.
-     *
-     * @param {Function} success    Callback method called on success.
-     * @param {Function} fail       Callback method called on failure.
-     */
-    getIdentifier: function(success, fail){
-        exec(success, fail, 'AppInfo', 'getIdentifier', []);
-    }
+    var me = this;
+
+    channel.onCordovaReady.subscribe(function() {
+        me.getAppInfo(function(info) {
+            me.version = info.version;
+            me.identifier = info.identifier;
+            me.build = info.build || 'unknown';
+            channel.onAppInfoReady.fire();
+        },function(e) {
+            utils.alert("[ERROR] Error initializing Cordova: " + e);
+        });
+    });
+}
+
+/**
+ * Get an object with the keys 'version', 'build' and 'identifier'.
+ *
+ * @param {Function} success    Callback method called on success.
+ * @param {Function} fail       Callback method called on failure.
+ */
+appInfo.prototype.getAppInfo = function(success, fail){
+    exec(success, fail, 'AppInfo', 'getAppInfo', []);
 };
+
+/**
+ * Get the version name.
+ *
+ * @param {Function} success    Callback method called on success.
+ * @param {Function} fail       Callback method called on failure.
+ */
+appInfo.prototype.getVersion = function(success, fail) {
+    exec(success, fail, 'AppInfo', 'getVersion', []);
+}
+
+/**
+ * Get the app identifier.
+ *
+ * @param {Function} success    Callback method called on success.
+ * @param {Function} fail       Callback method called on failure.
+ */
+appInfo.prototype.getIdentifier = function(success, fail){
+    exec(success, fail, 'AppInfo', 'getIdentifier', []);
+}
+
+module.exports = new appInfo();
