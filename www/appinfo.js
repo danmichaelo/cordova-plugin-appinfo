@@ -8,7 +8,7 @@ channel.waitForInitialization('onAppInfoReady');
 function appInfo() {
 
     this.version = null;
-    this.identfier = null;
+    this.identifier = null;
     this.build = null;
 
     var me = this;
