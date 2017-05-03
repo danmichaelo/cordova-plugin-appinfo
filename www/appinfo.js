@@ -20,8 +20,8 @@ function appInfo() {
             me.identifier = info.identifier;
             me.build = info.build || 'unknown';
             channel.onAppInfoReady.fire();
-        },function(e) {
-            utils.alert("[ERROR] Error initializing Cordova: " + e);
+        },function(e) {           
+            console.log("[ERROR] Error initializing Cordova: " + e);
         });
     });
 }
