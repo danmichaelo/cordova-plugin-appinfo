@@ -8,7 +8,7 @@ channel.waitForInitialization('onAppInfoReady');
 function appInfo() {
 
     this.version = null;
-    this.identfier = null;
+    this.identifier = null;
     this.build = null;
 
     var me = this;
@@ -19,8 +19,8 @@ function appInfo() {
             me.identifier = info.identifier;
             me.build = info.build || 'unknown';
             channel.onAppInfoReady.fire();
-        },function(e) {
-            utils.alert("[ERROR] Error initializing Cordova: " + e);
+        },function(e) {           
+            console.log("[ERROR] Error initializing Cordova: " + e);
         });
     });
 }
