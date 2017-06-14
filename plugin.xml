@@ -60,11 +60,22 @@
 
   <!-- Windows universal apps (Windows 8.1, Windows Phone 8.1, Windows 8.0) -->
   <platform name="windows">
-    
+
     <js-module src="src/windows/AppInfoProxy.js" name="AppInfoProxy">
       <runs />
     </js-module>
 
+  <!-- Browser platform -->
   </platform>
+
+    <platform name="browser">
+
+      <config-file target="config.xml" parent="/*">
+        <feature name="AppInfo">
+          <param name="browser-package" value="AppInfo" />
+        </feature>
+      </config-file>
+
+    </platform>
 
 </plugin>

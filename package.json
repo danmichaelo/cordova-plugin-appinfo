@@ -8,7 +8,8 @@
       "android",
       "ios",
       "wp8",
-      "windows"
+      "windows",
+      "browser"
     ]
   },
   "repository": {
@@ -23,7 +24,8 @@
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios",
-    "cordova-wp8"
+    "cordova-wp8",
+    "cordova-browser"
   ],
   "author": {
     "name": "Dan Michael O. Heggø",
@@ -41,6 +43,10 @@
     {
       "name": "Michele Belluco",
       "url": "https://github.com/vash15"
+    },
+    {
+      "name": "Yiorgis Gozadinos",
+      "url": "https://github.com/ggozad"
     }
   ],
   "license": "MIT",
