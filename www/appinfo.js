@@ -19,7 +19,7 @@ function appInfo() {
             me.identifier = info.identifier;
             me.build = info.build || 'unknown';
             channel.onAppInfoReady.fire();
-        },function(e) {           
+        },function(e) {
             console.log("[ERROR] Error initializing Cordova: " + e);
         });
     });
@@ -53,6 +53,21 @@ appInfo.prototype.getVersion = function(success, fail) {
  */
 appInfo.prototype.getIdentifier = function(success, fail){
     exec(success, fail, 'AppInfo', 'getIdentifier', []);
+}
+
+// Override for browser platform
+
+if (cordova.platformId==='browser') {
+    appInfo.prototype.getAppInfo = function (success, fail) {
+        success({identifier: '', version: ''})
+    }
+    appInfo.prototype.getVersion = function (success, fail) {
+        success('')
+    }
+    appInfo.prototype.getIdentifier = function(success, fail){
+        success('')
+    }
+
 }
 
 module.exports = new appInfo();
