@@ -13,8 +13,11 @@ function appInfo() {
 
     var me = this;
 
+    var timeout = setTimeout(() => { channel.onAppInfoReady.fire(); }, 100);
+
     channel.onCordovaReady.subscribe(function() {
         me.getAppInfo(function(info) {
+            clearTimeout(timeout);
             me.version = info.version;
             me.identifier = info.identifier;
             me.build = info.build || 'unknown';
